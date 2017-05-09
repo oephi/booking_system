@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  concession: MyString
+  name: MyString
+  email: MyString
+  cabin: MyString
+  paid: MyString
+
+two:
+  concession: MyString
+  name: MyString
+  email: MyString
+  cabin: MyString
+  paid: MyString

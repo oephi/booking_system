@@ -1,0 +1,42 @@
+<%= form_for(student) do |f| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :concession %>
+    <%= f.text_field :concession %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cabin %>
+    <%= f.select(:cabin,['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7',"D8", "D9", "A1", "A2", "A3", "A4", "A5", "C1.1", "C1.2", "C2.1", "C2.2"]) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :paid %>
+    <%= f.select(:paid,['Yes', 'No']) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

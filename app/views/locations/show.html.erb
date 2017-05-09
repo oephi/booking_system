@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @location.name %>
+</p>
+
+<p>
+  <strong>Rooms:</strong>
+  <%= @location.rooms %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @location.availability %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
+<%= link_to 'New Room', new_room_path(@location) %>

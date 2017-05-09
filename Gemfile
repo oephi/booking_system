@@ -11,6 +11,9 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # Devise
 gem 'devise'
 
+# To set the role of user
+
+gem 'rolify'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
