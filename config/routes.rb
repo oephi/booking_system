@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
   resources :rooms
-  resources :locations
-  resources :students
-  resources :courses
+  resources :locations do
+    resources :rooms
+  end
+  
+  resources :students do
+    resources :courses
+  end
+
+  resources :courses do
+    resources :students
+  end
+
   resources :home
 
   devise_for :users, controllers: { registrations: "registrations" }

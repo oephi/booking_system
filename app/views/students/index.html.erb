@@ -32,4 +32,8 @@
 
 <br>
 
+<%if @course_id %>
+<%= link_to 'New Student', new_course_student_path(course_id: @course_id) %>
+<%else%>
 <%= link_to 'New Student', new_student_path %>
+<%end%>

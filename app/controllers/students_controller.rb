@@ -4,7 +4,15 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    # binding.pry
+    if params[:course_id] then
+      course = Course.find(params[:course_id])
+      @students = course.students
+      @course_id = course.id
+    else
+      @students = Student.all
+    end
+
   end
 
   # GET /students/1
@@ -14,7 +22,12 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new
+    if params[:course_id]
+      @course = Course.find(params[:course_id])
+      @student = @course.students.new
+    else
+      @student = Student.new
+    end
   end
 
   # GET /students/1/edit
@@ -25,7 +38,11 @@ class StudentsController < ApplicationController
   # POST /students.json
   def create
     @student = Student.new(student_params)
-
+    if params[:course_id]
+      course = Course.find(params[:course_id])
+      @student.courses << course
+    end
+    # @student.courses = "hyehyhdd";
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
