@@ -9,7 +9,7 @@ end
 # Boostrap
 gem 'bootstrap-sass', '~> 3.3.6'
 # Devise
-gem 'devise'
+# gem 'devise'
 
 # To set the role of user
 
